@@ -157,7 +157,8 @@ impl Parse for OptStruct {
 
 impl ToTokens for OptStruct {
     fn to_tokens(&self, tokens: &mut TokenStream2) {
-        let (name, helper_defs, inners_body, call_body, validator) = OptStructConf::prepare_generate_tokens(&self.conf);
+        let (name, helper_defs, inners_body, call_body, validator) =
+            OptStructConf::prepare_generate_tokens(&self.conf);
 
         ToTokens::to_tokens(
             &quote! {
